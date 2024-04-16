@@ -28,31 +28,6 @@ function objectSceneEvent(idx,selector_id,navld) {
     updateTabStates(navld, idx);
 }
 
-// function dropobjectSceneEvent(idx) {
-//    let dics = document.querySelectorAll('.b-dics')[1];
-//    let sections = dics.getElementsByClassName('b-dics__section');
-//    let columnNames = ['00', '10', '30', '50', '70', '90', '99'];
-//
-//    let imageSuffix = '00019.png';
-//    let paths = [
-//        `resources/drop/3dgs/${columnNames[idx]}/${imageSuffix}`,
-//        `resources/drop/ours/${columnNames[idx]}/${imageSuffix}`,
-//        `resources/drop/gt/${columnNames[idx]}/${imageSuffix}` // Fix for GT path
-//    ];
-//
-//    for (let i = 0; i < sections.length; i++) {
-//        let imageContainer = sections[i].getElementsByClassName('b-dics__image-container')[0];
-//        if (imageContainer) {
-//            let image = imageContainer.getElementsByClassName('b-dics__image')[0];
-//            if (image) {
-//                image.src = paths[i];
-//            }
-//        }
-//    }
-//
-//    updateTabStates('dropobject-scale-recon', idx);
-// }
-
 function updateImages(sections, idx, imagesLength, sliderType) {
     for (let i = 0; i < imagesLength; i++) {
         let imageContainer = sections[i].getElementsByClassName('b-dics__image-container')[0];
@@ -82,6 +57,6 @@ function getImageFolder(idx, sliderType) {
 }
 
 function getImageFileName(imageIndex, sliderType) {
-    let filenames = ['3dgs.png', 'ours.png', 'gt.png'];
+    let filenames = ['3dgs.jpg', 'ours.jpg', 'gt.jpg'];
     return filenames[imageIndex];
 }
