@@ -84,7 +84,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2403.15530.pdf"
+                <a href="https://ty424.github.io/AbsGS.github.io/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -94,7 +94,7 @@
               </span>
 
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2403.15530"
+                <a href="https://ty424.github.io/AbsGS.github.io/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -105,7 +105,7 @@
           
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/zhengzhang01/AbsGS"
+                <a href="https://ty424.github.io/AbsGS.github.io/"
                    class="external-link button is-normal is-rounded is-dark disabled">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -206,7 +206,7 @@
         <h3 class="title is-4">Novel View Synthesis</h3>
         <div class="content has-text-justified">
           <p>
-            We present the NVS results of 3DGS, AbsGS (Ours), and Ground Truth.
+            We present the NVS results of 3D-GS, AbsGS (Ours), and Ground Truth.
           </p>
         </div>
         <div class="container">
@@ -243,7 +243,7 @@
               </li>
           </ul>
           <div class="b-dics" style="width: 1600px; font-weight: 400;">
-            <img src="resources/image/bicycle/3dgs.jpg" alt="3DGS">
+            <img src="resources/image/bicycle/3dgs.jpg" alt="3D-GS">
             <img src="resources/image/bicycle/ours.jpg" alt="Ours">
             <img src="resources/image/bicycle/gt.jpg" alt="GT">
           </div>
@@ -275,7 +275,7 @@
               </li>
           </ul>
           <div class="b-dics" style="width: 1600px; font-weight: 400;">
-            <img src="resources/image/treehill_pts/3dgs.jpg" alt="3DGS">
+            <img src="resources/image/treehill_pts/3dgs.jpg" alt="3D-GS">
             <img src="resources/image/treehill_pts/ours.jpg" alt="Ours">
             <img src="resources/image/treehill_pts/gt.jpg" alt="GT">
           </div>
@@ -283,10 +283,12 @@
 
 
 
-        <h3 class="title is-4" style="margin-top: 60px;">Ellipsoids</h3>
+        <h3 class="title is-4" style="margin-top: 60px;"> Selected Gaussian ellipsoids for densification </h3>
         <div class="content has-text-justified">
           <p>
-            We present ellipsoids of Gaussian primitives.
+            We train the treehill scene with 3D-GS using default parameters for 7000 steps;
+            then we present selected Gaussian ellipsoids for densifcation by 3D-GS and ours, with green representing splitting and blue representing cloning
+            Remarkably, the number of selected Gaussians between the two methods remained comparable, 69,787 and 52,517 Gaussians for 3D-GS and our method respectively.
           </p>
         </div>
         <div class="container">
@@ -308,9 +310,9 @@
 <!--              </li>-->
           </ul>
           <div class="b-dics" style="width: 1600px; font-weight: 400;">
-            <img src="resources/image/treehill_elli/3dgs.jpg" alt="3DGS">
+            <img src="resources/image/treehill_elli/3dgs.jpg" alt="3D-GS">
             <img src="resources/image/treehill_elli/ours.jpg" alt="Ours">
-            <img src="resources/image/treehill_elli/gt.jpg" alt="GT">
+            <img src="resources/image/treehill_elli/gt.jpg" alt="Rendered(3D-GS)">
           </div>
         </div>
 
