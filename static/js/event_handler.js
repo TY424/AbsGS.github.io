@@ -11,6 +11,11 @@ function domReady() {
         hideTexts: false,
         textPosition: "bottom"
     });
+    new Dics({
+        container: document.querySelectorAll('.b-dics')[2],
+        hideTexts: false,
+        textPosition: "bottom"
+    });
 }
 
 function objectSceneEvent(idx,selector_id,navld) {
@@ -21,24 +26,6 @@ function objectSceneEvent(idx,selector_id,navld) {
 
     updateImages(sections, idx, imagesLength, 'object');
     updateTabStates(navld, idx);
-}
-
-function objectSceneEvent_pts(idx) {
-    let dics = document.querySelectorAll('.b-dics')[1];
-    let sections = dics.getElementsByClassName('b-dics__section');
-    let imagesLength = 3;
-
-    updateImages(sections, idx, imagesLength, 'object');
-   updateTabStates('object-scale-pts', idx);
-}
-
-function objectSceneEvent_pts(idx) {
-    let dics = document.querySelectorAll('.b-dics')[1];
-    let sections = dics.getElementsByClassName('b-dics__section');
-    let imagesLength = 3;
-
-    updateImages(sections, idx, imagesLength, 'object');
-   updateTabStates('object-scale-pts', idx);
 }
 
 // function dropobjectSceneEvent(idx) {

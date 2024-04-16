@@ -58,9 +58,9 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="">Zongxin Ye</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="">Zongxin Ye</a><sup>1+</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="author-block">
-              <a href="">Wenyu Li</a><sup>1*</sup>
+              <a href="">Wenyu Li</a><sup>1+</sup>
             </span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="author-block">
               <a href="">Sidun Liu</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -131,7 +131,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
 
-          <img src="./resources/image/teaser.png" class="center">
+          <img src="./resources/image/teaser-jpg-lwy.jpg" class="center">
 <!--          <video class="video" width="100%" id="xyalias6" loop playsinline autoplay muted src="resources/video/flowers/video.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>-->
 <!--          <canvas height=0 class="videoMerge" id="xyalias6Merge"></canvas>-->
 <!--      -->
@@ -210,10 +210,10 @@
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
 
-        <h3 class="title is-4">Comparison wtih 3DGS</h3>
+        <h3 class="title is-4">Novel View Synthesis</h3>
         <div class="content has-text-justified">
           <p>
-            Here, we present the qualitative comparison results of 3DGS, AbsGS (Ours), and Ground Truth.
+            We present the NVS results of 3DGS, AbsGS (Ours), and Ground Truth.
           </p>
         </div>
         <div class="container">
@@ -253,14 +253,14 @@
             <img src="resources/image/bicycle/3dgs.png" alt="3DGS">
             <img src="resources/image/bicycle/ours.png" alt="Ours">
             <img src="resources/image/bicycle/gt.png" alt="GT">
-        </div>
+          </div>
         </div>
 
 
-        <h3 class="title is-4" style="margin-top: 60px;">Drop a certain proportion of the initial point cloud.</h3>
+        <h3 class="title is-4" style="margin-top: 60px;">Point Clouds</h3>
         <div class="content has-text-justified">
           <p>
-            Randomly discard a certain proportion of the SFM point cloud points for scene initialization. The figure below shows the comparison of the reconstruction results for the bicycle scene from the Mip-NeRF 360 dataset between 3DGS, AbsGS (Ours) and Ground Truth.
+            We present the point clouds by extracting mean positions of Gaussian primitives.
           </p>
         </div>
         <div class="container">
@@ -290,10 +290,10 @@
 
 
 
-        <h3 class="title is-4" style="margin-top: 60px;">Drop a certain proportion of the initial point cloud.</h3>
+        <h3 class="title is-4" style="margin-top: 60px;">Ellipsoids</h3>
         <div class="content has-text-justified">
           <p>
-            Randomly discard a certain proportion of the SFM point cloud points for scene initialization. The figure below shows the comparison of the reconstruction results for the bicycle scene from the Mip-NeRF 360 dataset between 3DGS, AbsGS (Ours) and Ground Truth.
+            We present ellipsoids of Gaussian primitives.
           </p>
         </div>
         <div class="container">
@@ -330,7 +330,7 @@
 </section>
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{zhang2024pixelgs,
@@ -340,7 +340,7 @@
   year      = {2024},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 
@@ -355,8 +355,8 @@
             This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
             Website template credit to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
-            We also incorporated design elements from <a href="https://niujinshuchong.github.io/mip-splatting/">Mip-Splatting</a>.
-            The video comparison with sliding bar is from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>. 
+            <!-- We also incorporated design elements from <a href="https://niujinshuchong.github.io/mip-splatting/">Mip-Splatting</a>. -->
+            <!-- The video comparison with sliding bar is from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>.  -->
             The image comparison with sliding bar is from <a href="https://research.nvidia.com/labs/dir/neuralangelo/">Neuralangelo</a>. 
           </p>
         </div>
