@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="AbsGS: Recovering Fine Details for 3D Gaussian Splatting">
+  <meta name="keywords" content="AbsGS: Recovering Fine Details for 3D Gaussian Splatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AbsGS</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="static/css/bootstrap-4.4.1.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  
+  <!-- Bulma and Font Awesome -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="icon" href="static/images/r_74.png">
+
+  <!-- jQuery and JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/app.js"></script>
+  <script src="static/js/video_comparison.js"></script>
+
+  <link rel="stylesheet" href="static/css/dics.original.css">
+  <script src="static/js/event_handler.js"></script>
+  <script src="static/js/dics.original.js"></script>
+  <script>
+  </script>
+
+</head>
+<body>
+
+
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>AbsGS</strong></h1>
+          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Recovering Fine Details for 3D Gaussian Splatting</h2>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Zongxin Ye</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Wenyu Li</a><sup>1*</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Sidun Liu</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Peng Qiao</a><sup>1</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Yong Dou</a><sup>1+</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>National University of Defense Technology</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>+</sup>co-first author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.15530.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.15530"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+          
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/zhengzhang01/AbsGS"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+
+          <img src="./resources/image/teaser.png" class="center">
+<!--          <video class="video" width="100%" id="xyalias6" loop playsinline autoplay muted src="resources/video/flowers/video.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>-->
+<!--          <canvas height=0 class="videoMerge" id="xyalias6Merge"></canvas>-->
+<!--      -->
+<!--          <h2 class="subtitle has-text-centered" style="margin-top: 15px">-->
+<!--            <b>3DGS* (left)</b> tends to exhibit blurring and needle-like artifacts in areas with insufficient point cloud initialization, <br>-->
+<!--            while <b>AbsGS (right)</b> by considering the conditions for point cloud growth from the pixel perspective effectively models these areas. <br>-->
+<!--            <b>*</b>  indicates retraining for better performance.-->
+<!--          </h2>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+3D Gaussian Splatting (3D-GS) technique couples 3D Gaussian primitives with differentiable rasterization to achieve high-quality novel view synthesis results while providing advanced real-time rendering performance. However, due to the flaw of its adaptive density control strategy in 3D-GS, it frequently suffers from over-reconstruction issue in intricate scenes containing high-frequency details, leading to blurry rendered images. The underlying reason for the flaw has still been under-explored. In this work, we present a comprehensive analysis of the cause of aforementioned artifacts, namely gradient collision, which prevents large Gaussians in over-reconstructed regions from splitting. To address this issue, we propose the novel homodirectional view-space positional gradient as the criterion for densification.  Our strategy efficiently identifies large Gaussians in over-reconstructed regions, and recovers fine details by splitting. We evaluate our proposed method on various challenging datasets. The experimental results indicate that our approach achieves the best rendering quality with reduced or similar memory consumption. Our method is easy to implement and can be incorporated into a wide variety of most recent Gaussian Splatting-based methods.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Page Title</title>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+
+        <img src="./resources/image/pip.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <b>Pipeline of AbsGS. </b>(a) The splat-based rendering technique projects Gaussian \( G_i \) with mean position \( \mu_{i}^{3d} \) to 2D coordinate \( \mu_{i} \) in pixel-space. The number of covered pixels by Gaussian \( G_i \) is \( m \). (b) By backpropagating, the view-space gradient \( g_i \) of Gaussian \( G_i \) under viewpoint \( k \) is calculated as the sum of all view-space gradients of pixels that are covered by \( G_i \). Since the gradients \( \frac{\partial L_j}{\partial \mu_{i}} \) have different directions, the overall sum \( g_i \) will have a small scale, which does not satisfy the gradient threshold for densification. (c) Motivated by the above analysis, we redesign the densification scheme by taking the absolute value of each component \( \lvert \frac{\partial L_j}{\partial \mu_{i,x}} \rvert \) and \( \lvert \frac{\partial L_j}{\partial \mu_{i,y}} \rvert \) before summing. This enables us to identify large Gaussians in over-reconstructed regions for split.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+</body>
+</html>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
+
+        <h3 class="title is-4">Comparison wtih 3DGS</h3>
+        <div class="content has-text-justified">
+          <p>
+            Here, we present the qualitative comparison results of 3DGS, AbsGS (Ours), and Ground Truth.
+          </p>
+        </div>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(0,1,'object-scale-recon')">garden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(1,0,'object-scale-recon')">bonsai</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(2,0,'object-scale-recon')">counter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(3,0,'object-scale-recon')">flowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(4,0,'object-scale-recon')">bicycle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(5,0,'object-scale-recon')">kitchen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(6,0,'object-scale-recon')">room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(7,0,'object-scale-recon')">stump</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(8,0,'object-scale-recon')">train</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(9,0,'object-scale-recon')">treehill</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 2300px; font-weight: 800;">
+            <img src="resources/image/bicycle/3dgs.png" alt="3DGS">
+            <img src="resources/image/bicycle/ours.png" alt="Ours">
+            <img src="resources/image/bicycle/gt.png" alt="GT">
+        </div>
+        </div>
+
+
+        <h3 class="title is-4" style="margin-top: 60px;">Drop a certain proportion of the initial point cloud.</h3>
+        <div class="content has-text-justified">
+          <p>
+            Randomly discard a certain proportion of the SFM point cloud points for scene initialization. The figure below shows the comparison of the reconstruction results for the bicycle scene from the Mip-NeRF 360 dataset between 3DGS, AbsGS (Ours) and Ground Truth.
+          </p>
+        </div>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-pts">
+              <li class="nav-item">
+                 <a class="nav-link" onclick="objectSceneEvent(10,1,'object-scale-pts')">bicycle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(11,1,'object-scale-pts')">flowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(12,1,'object-scale-pts')">treehill</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " onclick="objectSceneEvent(13,1,'object-scale-pts')">room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(14,1,'object-scale-pts')">stump</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 2300px; font-weight: 400;">
+            <img src="resources/image/treehill_pts/3dgs.png" alt="3DGS*">
+            <img src="resources/image/treehill_pts/ours.png" alt="Ours">
+            <img src="resources/image/treehill_pts/gt.png" alt="GT">
+          </div>
+        </div>
+
+
+
+        <h3 class="title is-4" style="margin-top: 60px;">Drop a certain proportion of the initial point cloud.</h3>
+        <div class="content has-text-justified">
+          <p>
+            Randomly discard a certain proportion of the SFM point cloud points for scene initialization. The figure below shows the comparison of the reconstruction results for the bicycle scene from the Mip-NeRF 360 dataset between 3DGS, AbsGS (Ours) and Ground Truth.
+          </p>
+        </div>
+        <div class="container">
+          <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-elli">
+              <li class="nav-item">
+                 <a class="nav-link" onclick="objectSceneEvent(15,2,'object-scale-elli')">bicycle</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(16,2,'object-scale-elli')">flowers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="objectSceneEvent(17,2,'object-scale-elli')">treehill</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " onclick="objectSceneEvent(18,2,'object-scale-elli')">room</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="objectSceneEvent(19,2,'object-scale-elli')">stump</a>
+              </li>
+          </ul>
+          <div class="b-dics" style="width: 2300px; font-weight: 400;">
+            <img src="resources/image/treehill_elli/3dgs.png" alt="3DGS*">
+            <img src="resources/image/treehill_elli/ours.png" alt="Ours">
+            <img src="resources/image/treehill_elli/gt.png" alt="GT">
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhang2024pixelgs,
+  title     = {AbsGS: Density Control with Pixel-aware Gradient for 3D Gaussian Splatting},
+  author    = {Zheng, Zhang and Wenbo, Hu and Yixing, Lao and Tong, He and Hengshuang, Zhao},
+  journal   = {arXiv:2403.15530},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            Website template credit to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We also incorporated design elements from <a href="https://niujinshuchong.github.io/mip-splatting/">Mip-Splatting</a>.
+            The video comparison with sliding bar is from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>. 
+            The image comparison with sliding bar is from <a href="https://research.nvidia.com/labs/dir/neuralangelo/">Neuralangelo</a>. 
+          </p>
+        </div>
+      </div>
+          <p></p>
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>
