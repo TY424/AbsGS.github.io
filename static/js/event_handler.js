@@ -50,8 +50,8 @@ function updateTabStates(navId, activeIdx) {
 }
 
 function getImageFolder(idx, sliderType) {
-    let folders = ['garden', 'bonsai', 'counter', 'flowers', 'bicycle', 'kitchen', 'room', 'stump', 'train', 'treehill',
-        'bicycle_pts', 'flowers_pts', 'treehill_pts', 'room_pts', 'stump_pts',
+    let folders = ['garden', 'bonsai', 'counter', 'flowers', 'bicycle1', 'bicycle2', 'kitchen', 'room', 'stump', 'train', 'treehill','truck',
+        'bicycle_pts1', 'bicycle_pts2', 'flowers_pts', 'treehill_pts', 'room_pts', 'stump_pts',
         'bicycle_elli', 'flowers_elli', 'treehill_elli', 'room_elli', 'stump_elli'];
     return folders[idx];
 }
